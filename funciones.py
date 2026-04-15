@@ -59,11 +59,10 @@ def pedir_coordenadas(disparo_realizado):
             print("  Introduce numeros enteros.")
 
 def coordenadas_maquina(disparo_maquina):
-    """Genera coordenadas aleatorias validas para la maquina."""
     while True:
         fila = np.random.randint(0, DIMENSION)
-        col  = np.random.randint(0, DIMENSION)
-        if (fila, col)in disparo_maquina:
+        col = np.random.randint(0, DIMENSION)
+        if (fila, col) not in disparo_maquina:
             return fila, col
    
 def imprimir_resultado(ganador):
